@@ -19,12 +19,29 @@ int main()
     char op1_tr[op1_len + 1], op2_tr[op2_len + 1];
 
     for (i = 0; i < op1_len; i++)
+    {
         op1_tr[i] = op1[op1_len - 1 - i];
+    }
     op1_tr[i] = '\0';
     for (i = 0; i < op2_len; i++)
+    {
         op2_tr[i] = op2[op2_len - 1 - i];
+    }
     op2_tr[i] = '\0';
 
-    printf("%s\n", op1_tr);
-    printf("%s\n", op2_tr);
+    switch (symbol[0])
+    {
+    case '+':
+        /* code */
+        break;
+    case '-':
+        /* code */
+        break;
+    case '*':
+        /* code */
+        break;
+    case '/':
+        /* code */
+        break;
+    }
 }
