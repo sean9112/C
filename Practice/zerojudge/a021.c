@@ -6,15 +6,22 @@
 void print_big(char *ans)
 {
     int i;
-    for (i = strlen(ans) - 1; i >= 0; i--)
-    {
+    for (i = strlen(ans) - 1; i >= 0; i--){
         printf("%c", ans[i]);
     }
     printf("\n");
 }
 
+
+
+int addi(int a, int b, int c)
+{
+    return a + b + c;
+}
+
 void big_add(char *op1, char *op2)
 {
+
 }
 
 void big_sub(char *op1, char *op2)
@@ -35,25 +42,21 @@ int main()
     char symbol;
     int op1_len, op2_len;
 
-    while (scanf("%s %c %s", op1, &symbol, op2) != EOF)
-    {
+    while (scanf("%s %c %s", op1, &symbol, op2) != EOF){
         op1_len = strlen(op1);
         op2_len = strlen(op2);
         char op1_tr[op1_len + 1], op2_tr[op2_len + 1];
         int i;
-        for (i = 0; i < op1_len; i++)
-        {
+        for (i = 0; i < op1_len; i++){
             op1_tr[i] = op1[op1_len - 1 - i];
         }
         op1_tr[i] = '\0';
-        for (i = 0; i < op2_len; i++)
-        {
+        for (i = 0; i < op2_len; i++){
             op2_tr[i] = op2[op2_len - 1 - i];
         }
         op2_tr[i] = '\0';
 
-        switch (symbol)
-        {
+        switch (symbol){
         case '+':
             big_add(op1_tr, op2_tr);
             break;
@@ -66,6 +69,4 @@ int main()
         case '/':
             big_div(op1_tr, op2_tr);
             break;
-        }
-    }
-}
+        }}}
