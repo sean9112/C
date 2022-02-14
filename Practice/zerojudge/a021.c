@@ -12,16 +12,8 @@ void print_big(char *ans)
     printf("\n");
 }
 
-
-
-int addi(int a, int b, int c)
-{
-    return a + b + c;
-}
-
 void big_add(char *op1, char *op2)
 {
-
 }
 
 void big_sub(char *op1, char *op2)
