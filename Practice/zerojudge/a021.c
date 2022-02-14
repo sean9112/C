@@ -15,51 +15,6 @@ void print_big(char *ans)
 
 void big_add(char *op1, char *op2)
 {
-    int carry = 0, i = 0, len;
-    char ans[MAX_SIZE];
-
-    while (op1[i] != '~' && op2[i] != '~')
-    {
-        ans[i] = (op1[i] + op2[i] + carry) % 10;
-        carry = 0;
-        if ((op1[i] + op2[i] + carry) >= 10)
-        {
-            carry++;
-        }
-        i++;
-    }
-    while (op1[i] != '~' && op2[i] == '~')
-    {
-        ans[i] = (op1[i] + carry) % 10;
-        carry = 0;
-        if ((op1[i] + carry) >= 10)
-        {
-            carry++;
-        }
-        i++;
-    }
-    while (op1[i] == '~' && op2[i] != '~')
-    {
-        ans[i] = (op2[i] + carry) % 10;
-        carry = 0;
-        if ((op2[i] + carry) >= 10)
-        {
-            carry++;
-        }
-        i++;
-    }
-    if (carry != 0)
-    {
-        ans[i] = carry;
-        i++;
-    }
-    ans[i] = '\0';
-    for (i = i - 1; i >= 0; i--)
-    {
-        ans[i] = ans[i] + 48;
-    }
-
-    print_big(ans);
 }
 
 void big_sub(char *op1, char *op2)
@@ -90,22 +45,12 @@ int main()
         {
             op1_tr[i] = op1[op1_len - 1 - i];
         }
-        op1_tr[i] = '~';
+        op1_tr[i] = '\0';
         for (i = 0; i < op2_len; i++)
         {
             op2_tr[i] = op2[op2_len - 1 - i];
         }
-        op2_tr[i] = '~';
-
-        for (i = 0; i < op1_len; i++)
-        {
-            op1_tr[i] = op1_tr[i] - 48;
-        }
-
-        for (i = 0; i < op2_len; i++)
-        {
-            op2_tr[i] = op2_tr[i] - 48;
-        }
+        op2_tr[i] = '\0';
 
         switch (symbol)
         {
