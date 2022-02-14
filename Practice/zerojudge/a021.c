@@ -15,7 +15,6 @@ void print_big(char *ans)
 
 void big_add(char *op1, char *op2)
 {
-    test
 }
 
 void big_sub(char *op1, char *op2)
